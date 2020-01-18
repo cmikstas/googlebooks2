@@ -16,6 +16,7 @@ class Saved extends React.Component
         API.getBooks()
         .then(res =>
         {
+            console.log(res.data);
             this.setState({ savedBooks: res.data });
         })
         .catch(err => console.log(err));
@@ -53,7 +54,7 @@ class Saved extends React.Component
                                         id={i}
                                         key={i}
                                         delete={this.clickDelete}
-                                        infoLink={books.infoLink}
+                                        infoLink={books.link}
                                         title={books.title}
                                         image={books.image}
                                         description={books.description}
